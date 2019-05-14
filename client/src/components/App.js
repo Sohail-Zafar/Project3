@@ -1,5 +1,5 @@
 import React from 'react';
-import VideoPage from './VideoPage';
+import VideoPage from '../components/pages/VideoPage';
 
 
 class App extends React.Component {

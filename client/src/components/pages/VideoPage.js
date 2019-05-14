@@ -1,8 +1,8 @@
 import React from 'react';
-import SearchBar from './SearchBar';
-import youtube from '../apis/youtube';
-import VideoList from './VideoList';
-import VideoDetail from './VideoDetail';
+import SearchBar from '../SearchBar';
+import youtube from '../../apis/youtube';
+import VideoList from '../VideoList';
+import VideoDetail from '../VideoDetail';
 
 
 class VideoPage extends React.Component {
