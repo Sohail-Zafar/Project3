@@ -1,6 +1,8 @@
 const express = require('express');
-//const gravatar = require ('gravitar');
+const gravatar = require('gravatar');
 const bcrypt = require ('bcryptjs');
+const jwt = require ('jsonwebtoken');
+const config = require ('config');
 const router = express.Router();
 const {
   check,
@@ -13,6 +15,7 @@ const User = require('../../models/User.js');
     // @Route   POST api/users
     // @Desc    Register User
     // @Access  Public
+    //
     router.post('/', [
         check('name', "name is required")
         .not()
@@ -37,23 +40,25 @@ const User = require('../../models/User.js');
             let user = await User.findOne({email});
 
             if(user) {
-              res.status(400).json({ errors: [{msg: "User allready exsits"}] });
+              return res
+                .status(400)
+                .json({ errors: [{msg: "User allready exsits"}] });
             }
         // get users gravitar
-            // const avatar = gravatar.url(email, {
-            //   s:'200',
-            //   r:'pg',
-            //   d: 'mm'
-            // })
+            const avatar = gravatar.url(email, {
+              s:'200',
+              r:'pg',
+              d: 'mm'
+            })
 
             user = new User ({
               name,
               email,
-              
+              avatar,
               password
             })
 
-        // encrypy password
+        // encrypt password
             const salt = await bcrypt.genSalt(10);
 
             user.password = await bcrypt.hash(password, salt);
@@ -61,9 +66,23 @@ const User = require('../../models/User.js');
             await user.save();
 
         // return jsonwebtokin
+            const payload = {
+              user: {
+                id: user.id
+              }
+            }
 
+            jwt.sign(
+              payload, 
+              config.get('jwtSecret'),
+              // expires in 1 hour 
+              {expiresIn: 36000},
+              (err, token) => {
+                if(err) throw err;
+                res.json({ token });
+              });
 
-        res.send('User Registered');
+        //res.send('User Registered');
 
         } catch(err) {
             console.log(err.message);
