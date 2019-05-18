@@ -1,26 +1,36 @@
 import React from 'react';
 
+
 class SearchBar extends React.Component {
   state = { term: ''}
 
-  onInputChange = (event) => {
-      this.setState ({ term: event.target.value})
-  };
+  // onInputChange = (event) => {
+  //     this.setState ({ term: event.target.value})
+  // };
 
-  onFormSubmit = (e) => {
-    e.preventDefault();
+  // onFormSubmit = (e) => {
+  //   e.preventDefault();
 
-    //  make sure we do callback 
-    this.props.onFormSubmit(this.state.term);
-  };
+  //   //  make sure we do callback 
+  //   this.props.onFormSubmit(this.state.term);
+  // };
+ 
 
-  render () {
+  getInitialState =function(){
+    return {value:'Radish'};
+  }
+
+handleChange = function(e){
+  this.setState({selectValue:e.target.value});
+  }
+  render = function() {
+    var message ='You selected '+this.state.selectValue;
     return  (
       <div className='search-bar ui segment'>
         <form onSubmit={this.onFormSubmit} className='ui form'>
           <div className='field'>
             <label>Video Search</label>
-            <select className='ui search dropdown' value={this.state.term} onChange={this.onInputChange} >
+            <select className='ui search dropdown' value={this.state.value} onChange={this.handleChange} >
 
             <option value=''>Select a medium to learn about</option>
             <option value='tips and tricks painting with water colors'>Water colors</option>
@@ -45,5 +55,7 @@ class SearchBar extends React.Component {
     )
   }
 }
+
+
 
 export default SearchBar;
