@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 class SearchBar extends React.Component {
   state = { term: ''}
 
@@ -16,15 +15,18 @@ class SearchBar extends React.Component {
   // };
  
 
-  getInitialState =function(){
-    return {value:'Radish'};
-  }
+getInitialState =function(){
+  return {value:'Radish'};
+}
 
-handleChange = function(e){
+handleChange = (e) => {
   this.setState({selectValue:e.target.value});
-  }
-  render = function() {
+  this.props.onFormSubmit(e.target.value);
+}
+
+render() {
     var message ='You selected '+this.state.selectValue;
+    console.log(message)
     return  (
       <div className='search-bar ui segment'>
         <form onSubmit={this.onFormSubmit} className='ui form'>
@@ -55,7 +57,6 @@ handleChange = function(e){
     )
   }
 }
-
 
 
 export default SearchBar;
