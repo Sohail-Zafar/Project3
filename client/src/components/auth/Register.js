@@ -17,6 +17,7 @@ const Register = ({ setAlert, register, isAuthenticated  }) => {
     password2: ''
   });
 
+  
 const { name, email, password, password2} = formData;
 
 const onChange = e => setFormData({...formData, [e.target.name]: e.target.value})
@@ -55,7 +56,7 @@ const onSubmit = async e => {
 };
 
 if(isAuthenticated) {
-  return <Redirect to='/dashboard' />
+  return <Redirect to='/video' />
 }
 
   return (
@@ -120,18 +121,17 @@ if(isAuthenticated) {
   )
 }
 
-// eslint-disable-next-line react/no-typos
-Register.PropTypes = {
+Register.propTypes = {
   setAlert: PropTypes.func.isRequired,
   register: PropTypes.func.isRequired,
   isAuthenticated:PropTypes.bool,
 };
 
 const mapStateToProps = state => ({
-  isAuthenticated: state.auth.isAuthenticated
+  isAuthenticated: state.auth.isAuthenticated,
 });
 
 export default connect(
-  null, 
+  mapStateToProps, 
     { setAlert, register }
     )(Register);

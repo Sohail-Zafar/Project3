@@ -31,13 +31,15 @@ const App = () => {
       
           <Navbar />
           <Landing />
+          
           <section className='ui container'>
             <Alert />
             <Switch>
                {/* pages go here */}
+              <Route exact path='/Video' component={VideoPage} />
               <Route exact path='/register' component={Register} />
               <Route exact path='/login' component={Login} />
-              <Route exact path='/Video' component={VideoPage} />
+              
             </Switch>
           </section>
        

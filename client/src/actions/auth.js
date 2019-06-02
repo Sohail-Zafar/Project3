@@ -5,7 +5,8 @@ import  {
   USER_LOADED, 
   AUTH_ERROR,
   LOGIN_FAIL,
-  LOGIN_SUCCESS 
+  LOGIN_SUCCESS,
+  LOGOUT
 } from './types';
 import { setAlert } from './alert';
 import setAuthToken from '../utils/setAuthToken';
@@ -96,4 +97,10 @@ try {
   });
 }
 
+};
+
+// logout / clear profile
+
+export const logout = () => dispatch => {
+  dispatch({ type: LOGOUT })
 };

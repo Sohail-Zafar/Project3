@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 //import axios from 'axios';
 import { connect } from 'react-redux';
@@ -26,7 +26,7 @@ const onSubmit = async e => {
 
 // redirect 
 if(isAuthenticated) {
-  return <Redirect to='/dashboard' />
+  return <Redirect to='/video' />
 }
   return (
    <div>
@@ -68,7 +68,7 @@ if(isAuthenticated) {
   );
 };
 
-Login.prototype = {
+Login.propType = {
   login: PropTypes.func.isRequired,
   isAuthenticated: PropTypes.bool
 };
