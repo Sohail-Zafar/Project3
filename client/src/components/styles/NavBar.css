@@ -1,0 +1,47 @@
+.container{
+    display:flex;
+}
+
+.container .nav-tabs #logoLink{
+    flex: 2;
+}
+
+span{
+    color: rgb(16, 192, 223);
+}
+
+a:link {
+    color: white;
+  }
+  
+  /* visited link */
+  a:visited {
+    color: white;
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: rgb(16, 192, 223);
+    background-color: none;
+    border: none;
+  }
+  
+  /* selected link */
+  a:active {
+    color: grey;
+  }
+
+  .aa{
+    font-family: 'Teko', sans-serif;
+    font-size: 40px;
+    color: white;
+  }
+
+  p{
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+  }
+
+  .nav-link a:hover{
+    border: none;
+  }

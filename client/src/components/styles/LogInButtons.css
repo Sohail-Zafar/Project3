@@ -1,0 +1,50 @@
+button{
+    border-width: 0px;
+    background-color: none;
+    color: white;
+    font:'Teko', sans-serif;
+    font-family:'Teko', sans-serif; 
+}
+
+.container {
+    display:flex;
+    background-color: black;
+    font-family: 'Teko', sans-serif;
+    font-size: 24px;
+}
+
+span{
+    color: rgb(16, 192, 223);
+}
+
+a:link {
+    color: white;
+  }
+  
+  /* visited link */
+  a:visited {
+    color: white;
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: rgb(16, 192, 223);
+  }
+  
+  /* selected link */
+  a:active {
+    color: grey;
+  }
+
+  .aa{
+    font-family: 'Teko', sans-serif;
+    font-size: 40px;
+    color: white;
+    flex: 5;
+    justify-content: space-evenly;
+  }
+
+  p{
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+  }

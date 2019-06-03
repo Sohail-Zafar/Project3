@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  background-color: black;
+  font-family: "Teko", sans-serif;
+  font-size: 24px;
+}
+
+p {
+  font-family: "Montserrat", sans-serif;
+}
