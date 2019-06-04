@@ -1,10 +1,10 @@
 import React from "react";
-//import NavBar from "../NavBar"
+
 
 function ArtTips() {
   return (
     <div>
-      {/* <NavBar /> */}
+     
       <h1 className="text-left">Art Tips</h1>
       <p>
         Lorem ipsum dolor sit amet, est ut enim consequat. Nostrum fastidii partiendo sed ne, no

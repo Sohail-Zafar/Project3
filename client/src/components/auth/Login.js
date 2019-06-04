@@ -30,7 +30,6 @@ if(isAuthenticated) {
 }
   return (
    <div>
-      
       <h1 className="large text-primary">Login</h1>
       <p className="lead"><i className="fas fa-user"></i> Login Into Your Account</p>
       <form className="form" onSubmit={e => onSubmit(e)}>
@@ -63,8 +62,8 @@ if(isAuthenticated) {
       <p className="my-1">
         Don't have an account? <Link to="/register">Sign Up </Link>
       </p>
-  
-      </div>
+    </div>
+   
   );
 };
 
