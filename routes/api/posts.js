@@ -24,6 +24,11 @@ router.post(
       .not()
       .isEmpty()
     ],
+    // [
+    //   check('url', 'Text is Required')
+    //   .not()
+    //   .isEmpty()
+    // ],
   ],
   async (req, res) => {
     const errors = validationResult(req);
@@ -35,9 +40,10 @@ router.post(
 
     try {
       const user = await User.findById(req.user.id).select('-password');
-
+// cloudanrt url goes in here
       const newPost = new Post({
         text: req.body.text,
+        url: "res from cloudanry",
         name: user.name,
         avatar: user.avatar,
         user: req.user.id

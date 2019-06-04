@@ -10,7 +10,7 @@ const Alert = ({ alerts }) =>
 ))
 
 // eslint-disable-next-line react/no-typos
-Alert.PropTypes = {
+Alert.propTypes = {
   alerts: PropTypes.array.isRequired,
 }
 

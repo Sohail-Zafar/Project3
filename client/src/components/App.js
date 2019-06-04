@@ -11,6 +11,8 @@ import Profile from "./pages/Profile";
 import MyArt from "../components/pages/MyArt";
 import ArtTips from "../components/pages/ArtTips";
 import Footer from '../components/Footer';
+import PrivateRoute from '../components/Routing/PrivateRoutes';
+
 //import Wrapper from "./components/Wrapper";
 // redux 
 import { Provider } from 'react-redux';
@@ -41,12 +43,12 @@ const App = () => {
           <Alert />
           <Switch>
             {/* pages go here */}
-            <Route exact path='/Video' component={VideoPage} />
+            <PrivateRoute exact path='/Video' component={VideoPage} />
             <Route exact path='/register' component={Register} />
             <Route exact path='/login' component={Login} />
-            <Route exact path="/profile" component={Profile} />
-            <Route exact path="/myart" component={MyArt} />
-            <Route exact path="/arttips" component={ArtTips} />
+            <PrivateRoute exact path="/profile" component={Profile} />
+            <PrivateRoute exact path="/myart" component={MyArt} />
+            <PrivateRoute exact path="/arttips" component={ArtTips} />
             <Route exact path="/landing" component={Landing} />
 
           </Switch>
