@@ -23,6 +23,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.5.7",
     "react-scripts": "^3.0.1",
+    "react-slideshow-image": "^1.1.8",
     "request": "^2.88.0"
   },
   "devDependencies": {

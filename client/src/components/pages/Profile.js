@@ -1,22 +1,44 @@
-import React from "react";
+import React, { useEffect, Fragment } from "react";
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import Spinner from '../../components/layout/Spinner';
+import { getCurrentProfile } from '../../actions/profile';
+//import CreateProfile from "../profile-forms/CreateProfile";
 
-function Profile() {
-  return (
-    <div>
-    
-      <h1>Home Page</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque velit, lobortis ut magna
-        varius, blandit rhoncus sem. Morbi lacinia nisi ac dui fermentum, sed luctus urna tincidunt.
-        Etiam ut feugiat ex. Cras non risus mi. Curabitur mattis rutrum ipsum, ut aliquet urna
-        imperdiet ac. Sed nec nulla aliquam, bibendum odio eget, vestibulum tortor. Cras rutrum
-        ligula in tincidunt commodo. Morbi sit amet mollis orci, in tristique ex. Donec nec ornare
-        elit. Donec blandit est sed risus feugiat porttitor. Vestibulum molestie hendrerit massa non
-        consequat. Vestibulum vitae lorem tortor. In elementum ultricies tempus. Interdum et
-        malesuada fames ac ante ipsum primis in faucibus.
-      </p>
-    </div>
-  );
-}
 
-export default Profile;
+const Profile = ({ getCurrentProfile,
+   auth: { user },
+    profile: {profile, loading} }) => {
+  useEffect(() => {
+    getCurrentProfile();
+  }, []);
+  
+  return (loading && profile === null ? <Spinner /> : <Fragment>
+    <h1>Profile</h1>
+    <p className='lead'>
+      <i className='fas fa-user'></i> Welcome { user && user.name }
+    </p>
+    {profile !== null ? (
+  <Fragment><p>Has</p></Fragment>) : (<Fragment> <p>Yoy have not yet set up a profile </p>
+    <Link to="/create-profile" className='btn btn-primary my-1'>
+      Create Profile
+    </Link>
+   </Fragment>)}
+  </Fragment>
+
+  )
+};
+
+Profile.propTypes = {
+  getCurrentProfile: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired,
+  profile: PropTypes.object.isRequired,
+};
+
+const mapStateToProps = state => ({
+  auth: state.auth,
+  profile: state.profile
+})
+
+export default connect(mapStateToProps, { getCurrentProfile })(Profile);

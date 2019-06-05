@@ -26,7 +26,7 @@ const onSubmit = async e => {
 
 // redirect 
 if(isAuthenticated) {
-  return <Redirect to='/video' />
+  return <Redirect to='/profile' />
 }
   return (
    <div>

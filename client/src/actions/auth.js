@@ -6,7 +6,8 @@ import  {
   AUTH_ERROR,
   LOGIN_FAIL,
   LOGIN_SUCCESS,
-  LOGOUT
+  LOGOUT,
+  CLEAR_PROFILE
 } from './types';
 import { setAlert } from './alert';
 import setAuthToken from '../utils/setAuthToken';
@@ -86,7 +87,7 @@ try {
   dispatch(loadUser());
 
 } catch (err) {
-  const errors = err.response.data.errors;
+  const errors = err.response;
 
   if(errors) {
     errors.forEach(error => dispatch(setAlert(err.msg, 'danger')));
@@ -102,5 +103,6 @@ try {
 // logout / clear profile
 
 export const logout = () => dispatch => {
-  dispatch({ type: LOGOUT })
+  dispatch({ type: CLEAR_PROFILE });
+  dispatch({ type: LOGOUT });
 };

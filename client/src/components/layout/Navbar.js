@@ -10,31 +10,105 @@ import "../styles/NavBar.css";
 const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
     <div className="container">
-    <div className="navbar navbar-expand-lg ">
-      <Link className="nav-tabs" to="/landing"> Home  </Link>
-    {/* change names to correct component  */}
-      <Link className="nav-tabs" to="/Profile"> Profile </Link>
-      <Link className="nav-tabs" to="/myart">My Art</Link>
-      <Link className="nav-tabs box" to="/video">Art Tips</Link>
-      <Link onClick={logout}  className="nav-tabs" to="/">Logout</Link>
-    </div>
+    <ul className="nav nav-tabs ">
+      <li className="nav-item">
+      {/* change names to correct component  */}
+      <Link className="nav-link" to="/Profile"> Profile </Link>
+      </li>
+      <li className="nav-item">
+      <Link className="nav-link" to="/myart">My Art</Link>
+      </li>
+      <li className="nav-item">
+      <Link className="nav-link" to="/video">Art Tips</Link>
+      </li>
+      <li className="nav-item">
+      <Link onClick={logout}  className="nav-link" to="/">Logout</Link>
+      </li>
+      {/* <li>
+        <Link to="/create-profile"> create profile </Link>
+      </li> */}
+    </ul>
     </div>
     
     
   );
 
   const guestLinks = (
-    <div className="navbar navbar-expand-lg ">
-      <Link className="nav-tabs" to="/LogIn">Login</Link>
-      <Link className="nav-tabs" to="/register">Register</Link>
+    <div className="container">
+    <ul className="nav nav-tabs ">
+      <li className="nav-item">
+      <Link className="nav-link" to="/LogIn">Login</Link>
+      </li>
+      <li className="nav-item">
+      <Link className="nav-link" to="/register">Register</Link>
+      </li>
+      
+      
+    </ul>
     </div>
   );
 
-  
+//   return (
+//     <div className="container">
+//     <ul className="nav nav-tabs">
+//       <li className="nav-item" id="logoLink">
+//       {!loading && (<Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>)}
+//         <Link
+//           to="/"
+//           className={
+//             window.location.pathname === "/myprofile" ? "nav-link active logo" : "nav-link logo"
+//           }
+//         >
+//           <img
+//             className="logoImg"
+//             src={logo}
+//             alt=""
+//             style={{ height: "50px" }}
+//           />
+//           <p className="white-space" />
+//           <p className="aa" style={{ height: "40px" }}>{" "}<span>A</span>rtists <span>A</span>ccumulated
+//           </p>
+//         </Link>
+//       </li>
+      
+//       <li className="nav-item">
+//         <Link
+//           to="/myart"
+//           className={
+//             window.location.pathname === "/myart" ? "nav-link" : "nav-link"
+//           }
+//         >
+//           My Art
+//         </Link>
+//       </li>
+//       <li className="nav-item">
+//         <Link
+//           to="/arttips"
+//           className={
+//             window.location.pathname === "/arttips" ? "nav-link" : "nav-link"
+//           }
+//         >
+//           Art Tips
+//         </Link>
+//       </li>
+//       <li>
+//       <Link
+//           to="/"
+//           className={
+//             window.location.pathname === "/" ? "nav-link" : "nav-link"
+//           }
+//         >
+//           Logout
+//         </Link>
+//         </li>
+//     </ul>
+//     </div>
+//   )
+// }
   return (
-    <div className="navbar navbar-expand-lg ">
-      <div className="right menu">
-      <div className="container">
+    <div className="container ">
+      <div className="nav nav-tabs">
+      <div className="">
       <img
             className="logoImg"
             src={logo}

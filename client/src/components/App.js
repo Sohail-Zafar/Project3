@@ -8,9 +8,12 @@ import Register from '../components/auth/Register';
 import Login from '../components/auth/Login';
 import Alert from '../components/layout/Alert';
 import Profile from "./pages/Profile";
+import CreateProfile from '../components/profile-forms/CreateProfile';
+//import SignUpForm from '../components/profile-forms/SignUpForm';
 import MyArt from "../components/pages/MyArt";
 import ArtTips from "../components/pages/ArtTips";
 import Footer from '../components/Footer';
+import Slideshow from '../components/Slideshow';
 import PrivateRoute from '../components/Routing/PrivateRoutes';
 
 //import Wrapper from "./components/Wrapper";
@@ -43,6 +46,7 @@ const App = () => {
           <Alert />
           <Switch>
             {/* pages go here */}
+            <Route exact path='/' component={Slideshow} />
             <PrivateRoute exact path='/Video' component={VideoPage} />
             <Route exact path='/register' component={Register} />
             <Route exact path='/login' component={Login} />
@@ -50,6 +54,8 @@ const App = () => {
             <PrivateRoute exact path="/myart" component={MyArt} />
             <PrivateRoute exact path="/arttips" component={ArtTips} />
             <Route exact path="/landing" component={Landing} />
+           
+            <Route exact path="create-profile" component={CreateProfile} />
 
           </Switch>
         </section>
