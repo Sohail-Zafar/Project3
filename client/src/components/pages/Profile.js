@@ -12,7 +12,7 @@ const Profile = ({ getCurrentProfile,
     profile: {profile, loading} }) => {
   useEffect(() => {
     getCurrentProfile();
-  }, []);
+  }, [getCurrentProfile]);
   
   return (loading && profile === null ? <Spinner /> : <Fragment>
     <h1>Profile</h1>

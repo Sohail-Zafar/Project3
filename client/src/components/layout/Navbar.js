@@ -11,6 +11,10 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
     <div className="container">
     <ul className="nav nav-tabs ">
+    <li className="nav-item">
+      
+      <Link className="nav-link" to="/Profiles"> Profiles </Link>
+      </li>
       <li className="nav-item">
       {/* change names to correct component  */}
       <Link className="nav-link" to="/Profile"> Profile </Link>

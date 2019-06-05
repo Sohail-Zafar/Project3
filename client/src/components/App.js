@@ -14,6 +14,7 @@ import MyArt from "../components/pages/MyArt";
 import ArtTips from "../components/pages/ArtTips";
 import Footer from '../components/Footer';
 import Slideshow from '../components/Slideshow';
+import Profiles from '../components/Profiles';
 import PrivateRoute from '../components/Routing/PrivateRoutes';
 
 //import Wrapper from "./components/Wrapper";
@@ -46,16 +47,17 @@ const App = () => {
           <Alert />
           <Switch>
             {/* pages go here */}
+            <Route exact path="/landing" component={Landing} />
+            <Route exact path="create-profile" component={CreateProfile} />
             <Route exact path='/' component={Slideshow} />
-            <PrivateRoute exact path='/Video' component={VideoPage} />
+            <Route exact path="/profiles" component={Profiles} />
             <Route exact path='/register' component={Register} />
             <Route exact path='/login' component={Login} />
             <PrivateRoute exact path="/profile" component={Profile} />
             <PrivateRoute exact path="/myart" component={MyArt} />
             <PrivateRoute exact path="/arttips" component={ArtTips} />
-            <Route exact path="/landing" component={Landing} />
-           
-            <Route exact path="create-profile" component={CreateProfile} />
+            <PrivateRoute exact path='/Video' component={VideoPage} />
+            
 
           </Switch>
         </section>
