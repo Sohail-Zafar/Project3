@@ -3,8 +3,15 @@
   background-color: black;
   font-family: "Teko", sans-serif;
   font-size: 24px;
+  width: 100%
 }
 
 p {
   font-family: "Montserrat", sans-serif;
+}
+
+@media (min-width: 992px){
+   .container {
+    max-width: 100%;
+   }
 }

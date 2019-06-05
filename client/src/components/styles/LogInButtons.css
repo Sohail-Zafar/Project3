@@ -1,50 +1,63 @@
 button{
-    border-width: 0px;
-    background-color: none;
-    color: white;
-    font:'Teko', sans-serif;
-    font-family:'Teko', sans-serif; 
+  border-width: 0px;
+  background-color: none;
+  color: white;
+  font:'Teko', sans-serif;
+  font-family:'Teko', sans-serif; 
 }
 
-.container {
-    display:flex;
-    background-color: black;
-    font-family: 'Teko', sans-serif;
-    font-size: 24px;
+.nav-container {
+  display:flex;
+  background-color: black;
+  font-family: 'Teko', sans-serif;
+  font-size: 24px;
+  width: 100%;
+}
+
+.logo {
+display: flex;
+}
+
+.logoImg{
+flex: 1;
+}
+
+.white-space{
+flex: 1
 }
 
 span{
-    color: rgb(16, 192, 223);
+  color: rgb(16, 192, 223);
 }
 
 a:link {
-    color: white;
-  }
-  
-  /* visited link */
-  a:visited {
-    color: white;
-  }
-  
-  /* mouse over link */
-  a:hover {
-    color: rgb(16, 192, 223);
-  }
-  
-  /* selected link */
-  a:active {
-    color: grey;
-  }
+  color: white;
+}
 
-  .aa{
-    font-family: 'Teko', sans-serif;
-    font-size: 40px;
-    color: white;
-    flex: 5;
-    justify-content: space-evenly;
-  }
+/* visited link */
+a:visited {
+  color: white;
+}
 
-  p{
-    font-family: 'Montserrat', sans-serif;
-    color: white;
-  }
+/* mouse over link */
+a:hover {
+  color: rgb(16, 192, 223);
+}
+
+/* selected link */
+a:active {
+  color: grey;
+}
+
+.aa{
+  font-family: 'Teko', sans-serif;
+  font-size: 40px;
+  color: white;
+  justify-content: space-evenly;
+  flex: 12
+}
+
+p{
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+}
